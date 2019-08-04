@@ -25,8 +25,13 @@ function shuffle(array) {
     return;
 }
 
-const cards = document.getElementsByClassName('card');
+const cards = document.querySelectorAll('.card');
 shuffle(cards);
+
+const resetButton = document.querySelector('.fa-repeat');
+resetButton.addEventListener('click', function restart() {
+    window.location.reload()
+});
 
 /*
  * set up the event listener for a card. If a card is clicked:
