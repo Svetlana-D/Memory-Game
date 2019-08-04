@@ -1,7 +1,7 @@
 /*
- * Create a list that holds all of your cards
+ *
+Create a list that holds all of your cards
  */
-
 
 /*
  * Display the cards on the page
@@ -17,7 +17,7 @@ function shuffle(array) {
     while (currentIndex !== 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
-        temporaryValue = array[currentIndex].children[0].className;;
+        temporaryValue = array[currentIndex].children[0].className;
         array[currentIndex].children[0].className = array[randomIndex].children[0].className;
         array[randomIndex].children[0].className = temporaryValue;
     }
@@ -28,10 +28,35 @@ function shuffle(array) {
 const cards = document.querySelectorAll('.card');
 shuffle(cards);
 
+// Set reset button
 const resetButton = document.querySelector('.fa-repeat');
 resetButton.addEventListener('click', function restart() {
     window.location.reload()
 });
+
+// Set up the event listener for a card
+function respondToTheClick()
+{
+    var cardState, picture
+    if ( event.target.tagName === "i" )
+    {
+        cardState = event.target.parentElement.className;
+        picture =  event.target.className;
+    }
+    else
+    {
+            cardState = event.target.className;
+            picture =  event.target.children[0].className;
+    }
+    console.log(cardState + " " + picture)
+}
+
+for(let i = 0; i < cards.length; i++)
+{
+   cards[i].addEventListener('click', respondToTheClick);
+}
+
+
 
 /*
  * set up the event listener for a card. If a card is clicked:
