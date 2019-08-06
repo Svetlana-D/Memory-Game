@@ -34,7 +34,7 @@ resetButton.addEventListener('click', function restart() {
     window.location.reload()
 });
 
-// Set up the event listener for a card
+/*// Set up the event listener for a card
 function respondToTheClick()
 {
     var cardState, picture
@@ -56,6 +56,13 @@ for(let i = 0; i < cards.length; i++)
    cards[i].addEventListener('click', respondToTheClick);
 }
 
+*/
+
+// Create open card function
+function openCard(thatCard) {
+    thatCard.classList.add('open', 'show');
+}
+// cards[0].classList.add('open', 'show');
 
 
 /*
