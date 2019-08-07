@@ -69,6 +69,20 @@ function closeCard(thatCard) {
     thatCard.classList.remove('open', 'show');
 }
 
+// Add an eventlisteners to cards
+for (let i = 0; i < cards.length; i++){
+    cards[i].addEventListener('click', function(){
+       console.log('I am here');
+    });
+}
+
+/* const deckCards = document.querySelector('.deck');
+deckCards.children.addEventListener('click', function(){
+    console.log('I am here');
+}) */
+
+
+
 
 /*
  * set up the event listener for a card. If a card is clicked:
