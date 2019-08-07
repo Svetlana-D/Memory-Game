@@ -59,8 +59,8 @@ for(let i = 0; i < cards.length; i++)
 */
 
 // Create open card function
-function openCard(thatCard) {
-    thatCard.classList.add('open', 'show');
+function openCard() {
+    event.target.classList.add('open', 'show');
 }
 // cards[0].classList.add('open', 'show');
 
@@ -70,12 +70,18 @@ function closeCard(thatCard) {
 }
 
 // Add an eventlisteners to cards
+ function respondToTheClick(){
+    openCard();
+ }
+
 for (let i = 0; i < cards.length; i++){
+    cards[i].addEventListener('click', respondToTheClick);
+}
+/*for (let i = 0; i < cards.length; i++){
     cards[i].addEventListener('click', function(){
-       console.log('I am here');
+        console.log('I am here');
     });
 }
-
 /* const deckCards = document.querySelector('.deck');
 deckCards.children.addEventListener('click', function(){
     console.log('I am here');
