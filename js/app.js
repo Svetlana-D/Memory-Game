@@ -64,6 +64,11 @@ function openCard(thatCard) {
 }
 // cards[0].classList.add('open', 'show');
 
+// Create close card function
+function closeCard(thatCard) {
+    thatCard.classList.remove('open', 'show');
+}
+
 
 /*
  * set up the event listener for a card. If a card is clicked:
