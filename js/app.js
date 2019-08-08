@@ -73,7 +73,14 @@ function closeCard(thatCard) {
  function respondToTheClick(){
     openCard();
  }
-
+/*
+function respondToTheClick(){
+    if (event.target.classList.contains('open') === true) {
+        console.log('It is work');
+    }
+   openCard();
+}
+*/
 for (let i = 0; i < cards.length; i++){
     cards[i].addEventListener('click', respondToTheClick);
 }
