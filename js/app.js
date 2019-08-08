@@ -71,10 +71,21 @@ function closeCard(thatCard) {
 
 // Add an eventlisteners to cards
 function respondToTheClick(){
-   openCard();
+    openCard();
 }
 for (let i = 0; i < cards.length; i++){
     cards[i].addEventListener('click', respondToTheClick);
+}
+
+// Check how many cards open
+function checkOpenClasses () {
+    var numberClasses = 0;
+    for (i = 0; i < cards.length; i++) {
+        if (cards[i].classList.contains('open')) {
+            numberClasses += 1;
+        }
+    }
+    return numberClasses;
 }
 
 /*
