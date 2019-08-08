@@ -66,13 +66,17 @@ function openCard() {
 
 // Create close card function
 function closeCard(thatCard) {
-    thatCard.classList.remove('open', 'show');
+    event.target.classList.remove('open', 'show');
 }
 
 // Add an eventlisteners to cards
- function respondToTheClick(){
-    openCard();
- }
+function respondToTheClick(){
+   openCard();
+}
+for (let i = 0; i < cards.length; i++){
+    cards[i].addEventListener('click', respondToTheClick);
+}
+
 /*
 function respondToTheClick(){
     if (event.target.classList.contains('open') === true) {
@@ -81,9 +85,7 @@ function respondToTheClick(){
    openCard();
 }
 */
-for (let i = 0; i < cards.length; i++){
-    cards[i].addEventListener('click', respondToTheClick);
-}
+
 /*for (let i = 0; i < cards.length; i++){
     cards[i].addEventListener('click', function(){
         console.log('I am here');
