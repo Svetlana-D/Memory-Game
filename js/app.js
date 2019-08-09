@@ -50,19 +50,16 @@ function respondToTheClick()
     }
     console.log(cardState + " " + picture)
 }
-
 for(let i = 0; i < cards.length; i++)
 {
    cards[i].addEventListener('click', respondToTheClick);
 }
-
 */
 
 // Create open card function
 function openCard() {
     event.target.classList.add('open', 'show');
 }
-// cards[0].classList.add('open', 'show');
 
 // Create close card function
 function closeCard(thatCard) {
@@ -70,8 +67,15 @@ function closeCard(thatCard) {
 }
 
 // Add an eventlisteners to cards
+var numberClasses = 0;
 function respondToTheClick(){
-    openCard();
+    //var numberClasses = 0;
+    checkOpenClasses();
+    if(numberClasses === 0 ){
+        openCard();
+    }
+    return;
+
 }
 for (let i = 0; i < cards.length; i++){
     cards[i].addEventListener('click', respondToTheClick);
@@ -79,7 +83,7 @@ for (let i = 0; i < cards.length; i++){
 
 // Check how many cards open
 function checkOpenClasses () {
-    var numberClasses = 0;
+    //numberClasses;
     for (i = 0; i < cards.length; i++) {
         if (cards[i].classList.contains('open')) {
             numberClasses += 1;
@@ -87,26 +91,6 @@ function checkOpenClasses () {
     }
     return numberClasses;
 }
-
-/*
-function respondToTheClick(){
-    if (event.target.classList.contains('open') === true) {
-        console.log('It is work');
-    }
-   openCard();
-}
-*/
-
-/*for (let i = 0; i < cards.length; i++){
-    cards[i].addEventListener('click', function(){
-        console.log('I am here');
-    });
-}
-/* const deckCards = document.querySelector('.deck');
-deckCards.children.addEventListener('click', function(){
-    console.log('I am here');
-}) */
-
 
 
 
