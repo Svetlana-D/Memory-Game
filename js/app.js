@@ -67,15 +67,35 @@ function closeCard(thatCard) {
 }
 
 // Add an eventlisteners to cards
+    var firstCard;
+    var secondCard;
+    var firstCardValue;
+    var secondCardValue;
 var numberClasses = 0;
 function respondToTheClick(){
     //var numberClasses = 0;
+    //var firstCard;
+    //var secondCard;
     checkOpenClasses();
     if(numberClasses === 0 ){
         openCard();
+        firstCard = event.target;
+        firstCardValue = event.target.querySelector('.fa');
     }
     if(numberClasses === 1 ){
         openCard();
+        secondCard = event.target;
+        secondCardValue = event.target.querySelector('.fa');
+        if(firstCardValue.classList.value === secondCardValue.classList.value) {
+            //console.log('yes');
+            firstCard.classList.remove('open', 'show');
+            firstCard.classList.add('match');
+            secondCard.classList.remove('open', 'show');
+            secondCard.classList.add('match');
+        }
+        //else {
+//
+        //}
     }
     return;
 
@@ -95,6 +115,10 @@ function checkOpenClasses () {
     return numberClasses;
 }
 
+// Check if cards is match
+//function cardsMatch(){
+ //   if(event.target.children.classList ===
+//}
 
 
 /*
