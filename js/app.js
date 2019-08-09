@@ -92,12 +92,15 @@ function respondToTheClick(){
             firstCard.classList.add('match');
             secondCard.classList.remove('open', 'show');
             secondCard.classList.add('match');
+            numberClasses = 0;
         }
         if(firstCardValue.classList.value != secondCardValue.classList.value) {
            setTimeout(closeC, 2000);
             function closeC(){
             firstCard.classList.remove('open', 'show');
             secondCard.classList.remove('open', 'show');
+            numberClasses = 0;
+
             return;
             }
         }
