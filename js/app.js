@@ -93,10 +93,14 @@ function respondToTheClick(){
             secondCard.classList.remove('open', 'show');
             secondCard.classList.add('match');
         }
-        //else {
-        //    firstCard.classList.remove('open', 'show');
-        //    secondCard.classList.remove('open', 'show');
-        //}
+        if(firstCardValue.classList.value != secondCardValue.classList.value) {
+           setTimeout(closeC, 2000);
+            function closeC(){
+            firstCard.classList.remove('open', 'show');
+            secondCard.classList.remove('open', 'show');
+            return;
+            }
+        }
     }
     return;
 
