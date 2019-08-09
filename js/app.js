@@ -94,7 +94,8 @@ function respondToTheClick(){
             secondCard.classList.add('match');
         }
         //else {
-//
+        //    firstCard.classList.remove('open', 'show');
+        //    secondCard.classList.remove('open', 'show');
         //}
     }
     return;
