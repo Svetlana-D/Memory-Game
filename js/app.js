@@ -74,6 +74,9 @@ function respondToTheClick(){
     if(numberClasses === 0 ){
         openCard();
     }
+    if(numberClasses === 1 ){
+        openCard();
+    }
     return;
 
 }
