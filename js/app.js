@@ -41,7 +41,7 @@ var numberClasses = 0;
 // Create mowes count variables
 const movesCount = document.querySelector('.moves');
 var numberMoves = 0;
-
+var numberMistakes = 0;
 
 function respondToTheClick(){
     //var numberClasses = 0;
@@ -61,6 +61,7 @@ function respondToTheClick(){
         secondCardValue = event.target.querySelector('.fa');
         numberMoves += 1;
         movesCount.textContent = numberMoves;
+        //if(numberMoves === 10)
         if(firstCardValue.classList.value === secondCardValue.classList.value) {
             //console.log('yes');
             firstCard.classList.remove('open', 'show');
@@ -75,7 +76,10 @@ function respondToTheClick(){
             firstCard.classList.remove('open', 'show');
             secondCard.classList.remove('open', 'show');
             numberClasses = 0;
+            numberMistakes += 1;
+            if(numberMistakes === 2) {
 
+            }
             return;
             }
         }
