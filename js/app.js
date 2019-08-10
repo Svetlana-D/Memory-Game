@@ -1,15 +1,3 @@
-/*
- *
-Create a list that holds all of your cards
- */
-
-/*
- * Display the cards on the page
- *   - shuffle the list of cards using the provided "shuffle" method below
- *   - loop through each card and create its HTML
- *   - add each card's HTML to the page
- */
-
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -34,28 +22,6 @@ resetButton.addEventListener('click', function restart() {
     window.location.reload()
 });
 
-/*// Set up the event listener for a card
-function respondToTheClick()
-{
-    var cardState, picture
-    if ( event.target.tagName === "i" )
-    {
-        cardState = event.target.parentElement.className;
-        picture =  event.target.className;
-    }
-    else
-    {
-            cardState = event.target.className;
-            picture =  event.target.children[0].className;
-    }
-    console.log(cardState + " " + picture)
-}
-for(let i = 0; i < cards.length; i++)
-{
-   cards[i].addEventListener('click', respondToTheClick);
-}
-*/
-
 // Create open card function
 function openCard() {
     event.target.classList.add('open', 'show');
@@ -67,15 +33,22 @@ function closeCard(thatCard) {
 }
 
 // Add an eventlisteners to cards
-    var firstCard;
-    var secondCard;
-    var firstCardValue;
-    var secondCardValue;
+var firstCard;
+var secondCard;var firstCardValue;
+var secondCardValue;
 var numberClasses = 0;
+
+// Create mowes count variables
+const movesCount = document.querySelector('.moves');
+var numberMoves = 0;
+
+
 function respondToTheClick(){
     //var numberClasses = 0;
-    //var firstCard;
+   //var firstCard;
     //var secondCard;
+    //var firstCardValue;
+    //var secondCardValue;
     checkOpenClasses();
     if(numberClasses === 0 ){
         openCard();
@@ -86,6 +59,8 @@ function respondToTheClick(){
         openCard();
         secondCard = event.target;
         secondCardValue = event.target.querySelector('.fa');
+        numberMoves += 1;
+        movesCount.textContent = numberMoves;
         if(firstCardValue.classList.value === secondCardValue.classList.value) {
             //console.log('yes');
             firstCard.classList.remove('open', 'show');
@@ -108,6 +83,7 @@ function respondToTheClick(){
     return;
 
 }
+
 for (let i = 0; i < cards.length; i++){
     cards[i].addEventListener('click', respondToTheClick);
 }
