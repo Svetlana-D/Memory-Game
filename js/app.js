@@ -49,6 +49,7 @@ function respondToTheClick(){
     //var secondCard;
     //var firstCardValue;
     //var secondCardValue;
+    var stars = document.querySelector('.stars');
     checkOpenClasses();
     if(numberClasses === 0 ){
         openCard();
@@ -85,7 +86,13 @@ function respondToTheClick(){
             numberClasses = 0;
             numberMistakes += 1;
             if(numberMistakes === 2) {
-
+                stars.children[2].children[0].style.color = '#ffffff';
+            }
+            if(numberMistakes === 6) {
+                stars.children[1].children[0].style.color = '#ffffff';
+            }
+            if(numberMistakes === 10) {
+                stars.children[0].children[0].style.color = '#ffffff';
             }
             return;
             }
