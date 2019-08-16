@@ -13,6 +13,8 @@ function shuffle(array) {
     return;
 }
 
+const startingTime = performance.now();
+
 const cards = document.querySelectorAll('.card');
 shuffle(cards);
 
@@ -44,6 +46,7 @@ var numberMoves = 0;
 var numberMistakes = 0;
 var numberCorrectMoves = 0;
 var numberStars = 3;
+var starWord = "Stars";
 function respondToTheClick(){
     //var numberClasses = 0;
    //var firstCard;
@@ -74,9 +77,19 @@ function respondToTheClick(){
             numberCorrectMoves += 1;
             if(numberCorrectMoves === 1)
             {
+                const endingTime = performance.now();
+                const allTime = endingTime - startingTime;
+                // Function millisToMinutesAndSeconds() from https://stackoverflow.com/questions/21294302/converting-milliseconds-to-minutes-and-seconds-with-javascript
+                function millisToMinutesAndSeconds(millis)
+                {
+                  var minutes = Math.floor(millis / 60000);
+                  var seconds = ((millis % 60000) / 1000).toFixed(0);
+                  return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+                }
+                const gameTime = millisToMinutesAndSeconds(allTime)
                 swal({
                   title: "Congratulations! You won!",
-                  text: "With " + numberMoves + " Moves and " + numberStars + " Stars" + "!",
+                  text: "With " + numberMoves + " Moves and " + numberStars + " " + starWord + "\n Your Game Time " + gameTime + " Seconds!",
                   icon: "success",
                   button:
                   {
@@ -93,6 +106,7 @@ function respondToTheClick(){
                 //swal("Congratulations! You won!", "With " + numberMoves + " Moves!", "success");
             }
             if(numberCorrectMoves === 8){
+                //const endingTime = performance.now();
                 setTimeout(alertOpen, 1000);
                     function alertOpen() {
                         return alert ('You win the game! \nCongrats!');
@@ -114,10 +128,12 @@ function respondToTheClick(){
             if(numberMistakes === 6) {
                 stars.children[1].children[0].style.color = '#ffffff';
                 numberStars -= 1;
+                starWord = "Star";
             }
             if(numberMistakes === 10) {
                 stars.children[0].children[0].style.color = '#ffffff';
                 numberStars -= 1;
+                starWord = "Stars";
             }
             return;
             }
