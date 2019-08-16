@@ -43,7 +43,7 @@ const movesCount = document.querySelector('.moves');
 var numberMoves = 0;
 var numberMistakes = 0;
 var numberCorrectMoves = 0;
-var numberStars = 0;
+var numberStars = 3;
 function respondToTheClick(){
     //var numberClasses = 0;
    //var firstCard;
@@ -76,7 +76,7 @@ function respondToTheClick(){
             {
                 swal({
                   title: "Congratulations! You won!",
-                  text: "With " + numberMoves + " Moves and " + "!",
+                  text: "With " + numberMoves + " Moves and " + numberStars + " Stars" + "!",
                   icon: "success",
                   button:
                   {
@@ -109,12 +109,15 @@ function respondToTheClick(){
             if(numberMistakes === 2) {
                 //stars.children[2].children[0].setAttribute("style", "color:#ffffff; border: 2px solid blue;");
                 stars.children[2].children[0].style.color = '#ffffff';
+                numberStars -= 1;
             }
             if(numberMistakes === 6) {
                 stars.children[1].children[0].style.color = '#ffffff';
+                numberStars -= 1;
             }
             if(numberMistakes === 10) {
                 stars.children[0].children[0].style.color = '#ffffff';
+                numberStars -= 1;
             }
             return;
             }
