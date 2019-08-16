@@ -43,6 +43,7 @@ const movesCount = document.querySelector('.moves');
 var numberMoves = 0;
 var numberMistakes = 0;
 var numberCorrectMoves = 0;
+var numberStars = 0;
 function respondToTheClick(){
     //var numberClasses = 0;
    //var firstCard;
@@ -71,6 +72,26 @@ function respondToTheClick(){
             secondCard.classList.add('match');
             numberClasses = 0;
             numberCorrectMoves += 1;
+            if(numberCorrectMoves === 1)
+            {
+                swal({
+                  title: "Congratulations! You won!",
+                  text: "With " + numberMoves + " Moves and " + "!",
+                  icon: "success",
+                  button:
+                  {
+                    text: "Play again!",
+                    value: "catch",
+                  },
+                })
+                .then((value) => {
+                  switch (value) {
+                    case "catch":
+                      window.location.reload();
+                  }
+                });
+                //swal("Congratulations! You won!", "With " + numberMoves + " Moves!", "success");
+            }
             if(numberCorrectMoves === 8){
                 setTimeout(alertOpen, 1000);
                     function alertOpen() {
@@ -86,6 +107,7 @@ function respondToTheClick(){
             numberClasses = 0;
             numberMistakes += 1;
             if(numberMistakes === 2) {
+                //stars.children[2].children[0].setAttribute("style", "color:#ffffff; border: 2px solid blue;");
                 stars.children[2].children[0].style.color = '#ffffff';
             }
             if(numberMistakes === 6) {
