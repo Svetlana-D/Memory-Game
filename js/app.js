@@ -75,7 +75,7 @@ function respondToTheClick(){
             secondCard.classList.add('match');
             numberClasses = 0;
             numberCorrectMoves += 1;
-            if(numberCorrectMoves === 1)
+            if(numberCorrectMoves === 8)
             {
                 const endingTime = performance.now();
                 const allTime = endingTime - startingTime;
@@ -88,8 +88,8 @@ function respondToTheClick(){
                 }
                 const gameTime = millisToMinutesAndSeconds(allTime)
                 swal({
-                  title: "Congratulations! You won!",
-                  text: "With " + numberMoves + " Moves and " + numberStars + " " + starWord + "\n Your Game Time " + gameTime + " Seconds!",
+                  title: "Congratulations! You Won!",
+                  text: "With " + numberMoves + " Moves and " + numberStars + " " + starWord + "\n Your Game Time is " + gameTime + "!",
                   icon: "success",
                   button:
                   {
@@ -105,13 +105,15 @@ function respondToTheClick(){
                 });
                 //swal("Congratulations! You won!", "With " + numberMoves + " Moves!", "success");
             }
-            if(numberCorrectMoves === 8){
+            /*if(numberCorrectMoves === 8)
+            {
                 //const endingTime = performance.now();
                 setTimeout(alertOpen, 1000);
-                    function alertOpen() {
+                    function alertOpen()
+                    {
                         return alert ('You win the game! \nCongrats!');
                     }
-            }
+            }*/
         }
         if(firstCardValue.classList.value != secondCardValue.classList.value) {
             setTimeout(closeC, 1500);
