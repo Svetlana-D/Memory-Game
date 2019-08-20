@@ -92,6 +92,7 @@ var numberMistakes = 0;
 var numberCorrectMoves = 0;
 var numberStars = 3;
 var starWord = "Stars";
+var timerId = document.querySelector("#timer");
 function respondToTheClick(){
     //var numberClasses = 0;
    //var firstCard;
@@ -123,7 +124,7 @@ function respondToTheClick(){
             if(numberCorrectMoves === 2)
             {
                 watch.stop();
-                //var gameTime = watch.show().toString();
+                //var gameTime = ;
                 //const endingTime = performance.now();
                 //const allTime = endingTime - startingTime;
                 // Function millisToMinutesAndSeconds() from https://stackoverflow.com/questions/21294302/converting-milliseconds-to-minutes-and-seconds-with-javascript
@@ -136,7 +137,7 @@ function respondToTheClick(){
                 //const gameTime = millisToMinutesAndSeconds(allTime)
                 swal({
                   title: "Congratulations! You Won!",
-                  text: "With " + numberMoves + " Moves and " + numberStars + " " + starWord + "\n Your Game Time is " + gameTime + "!",
+                  text: "With " + numberMoves + " Moves and " + numberStars + " " + starWord + "\n Your Game Time is " + timerId.innerText + "!",
                   icon: "success",
                   button:
                   {
