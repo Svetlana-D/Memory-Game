@@ -40,6 +40,51 @@ var secondCard;var firstCardValue;
 var secondCardValue;
 var numberClasses = 0;
 
+
+// Function millisToMinutesAndSeconds() from https://stackoverflow.com/questions/21294302/converting-milliseconds-to-minutes-and-seconds-with-javascript
+function millisToMinutesAndSeconds(millis)
+{
+    var minutes = Math.floor(millis / 60000);
+    var seconds = ((millis % 60000) / 1000).toFixed(0);
+    return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+}
+
+// Create timer function ????????????
+var timer = document.getElementById('timer');
+
+var watch = new Stopwatch(timer);
+watch.start();
+
+/*
+var toggleBtn = document.getElementById('toggle');
+var resetBtn = document.getElementById('reset');
+
+
+
+function start() {
+  toggleBtn.textContent = 'Stop';
+  watch.start();
+}
+
+function stop() {
+  toggleBtn.textContent = 'Start';
+  watch.stop();
+}
+
+toggleBtn.addEventListener('click', function() {
+  watch.isOn ? stop() : start();
+});
+
+resetBtn.addEventListener('click', function() {
+  watch.reset();
+});
+
+*/
+
+
+
+
+
 // Create mowes count variables
 const movesCount = document.querySelector('.moves');
 var numberMoves = 0;
@@ -75,18 +120,20 @@ function respondToTheClick(){
             secondCard.classList.add('match');
             numberClasses = 0;
             numberCorrectMoves += 1;
-            if(numberCorrectMoves === 8)
+            if(numberCorrectMoves === 2)
             {
-                const endingTime = performance.now();
-                const allTime = endingTime - startingTime;
+                watch.stop();
+                //var gameTime = watch.show().toString();
+                //const endingTime = performance.now();
+                //const allTime = endingTime - startingTime;
                 // Function millisToMinutesAndSeconds() from https://stackoverflow.com/questions/21294302/converting-milliseconds-to-minutes-and-seconds-with-javascript
-                function millisToMinutesAndSeconds(millis)
+                /*function millisToMinutesAndSeconds(millis)
                 {
                   var minutes = Math.floor(millis / 60000);
                   var seconds = ((millis % 60000) / 1000).toFixed(0);
                   return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
-                }
-                const gameTime = millisToMinutesAndSeconds(allTime)
+                }*/
+                //const gameTime = millisToMinutesAndSeconds(allTime)
                 swal({
                   title: "Congratulations! You Won!",
                   text: "With " + numberMoves + " Moves and " + numberStars + " " + starWord + "\n Your Game Time is " + gameTime + "!",
@@ -159,6 +206,41 @@ function checkOpenClasses () {
     }
     return numberClasses;
 }
+
+
+// Create Timer function
+
+
+
+
+/*var minutesLabel = document.getElementById("minutes");
+var secondsLabel = document.getElementById("seconds");
+var totalSeconds = 0;
+setInterval(setTime, 1000);
+
+function setTime() {
+  ++totalSeconds;
+  secondsLabel.innerHTML = pad(totalSeconds % 60);
+  minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+}
+
+function pad(val) {
+  var valString = val + "";
+  if (valString.length < 2) {
+    return "0" + valString;
+  } else {
+    return valString;
+  }
+}
+*/
+
+
+
+
+
+
+
+
 
 // Check if cards is match
 //function cardsMatch(){
