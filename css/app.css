@@ -103,18 +103,17 @@ h1 {
     display: inline-block;
 }
 
-#timer {
-    margin-right: 20px;
-    max-width: fit-content;
-    float: right;
-}
 
 .score-panel .restart {
     float: right;
     cursor: pointer;
 }
 
-
+#timer {
+    margin-right: 20px;
+    max-width: fit-content;
+    float: right;
+}
 
 /*@media screen and (max-device-width: 600px) {
     .deck {
