@@ -13,85 +13,64 @@ function shuffle(array) {
     return;
 }
 
-const startingTime = performance.now();
 
+// Variables for Shuffle function and call it
 const cards = document.querySelectorAll('.card');
 shuffle(cards);
 
-// Set reset button
+
+// Reset button
 const resetButton = document.querySelector('.fa-repeat');
 resetButton.addEventListener('click', function restart() {
     window.location.reload()
 });
 
-// Create open card function
+
+// Open card function
 function openCard() {
     event.target.classList.add('open', 'show');
 }
 
-// Create close card function
-function closeCard(thatCard) {
-    event.target.classList.remove('open', 'show');
+
+// Check how many cards open function
+function checkOpenClasses () {
+    for (i = 0; i < cards.length; i++) {
+        if (cards[i].classList.contains('open')) {
+            numberClasses += 1;
+        }
+    }
+    return numberClasses;
 }
 
-// Add an eventlisteners to cards
-var firstCard;
-var secondCard;var firstCardValue;
-var secondCardValue;
+
+// Variables for timer
+var watch = new stopWatch(timer);
+var timerId = document.querySelector("#timer");
+
+
+// Variables for open, close, match cards
 var numberClasses = 0;
+var firstCard;
+var secondCard;
+var firstCardValue;
+var secondCardValue;
 
 
-// Function millisToMinutesAndSeconds() from https://stackoverflow.com/questions/21294302/converting-milliseconds-to-minutes-and-seconds-with-javascript
-function millisToMinutesAndSeconds(millis)
-{
-    var minutes = Math.floor(millis / 60000);
-    var seconds = ((millis % 60000) / 1000).toFixed(0);
-    return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
-}
-
-// Create timer function ????????????
-var timer = document.getElementById('timer');
-
-var watch = new Stopwatch(timer);
-watch.start();
-
-/*
-var toggleBtn = document.getElementById('toggle');
-var resetBtn = document.getElementById('reset');
-function start() {
-  toggleBtn.textContent = 'Stop';
-  watch.start();
-}
-function stop() {
-  toggleBtn.textContent = 'Start';
-  watch.stop();
-}
-toggleBtn.addEventListener('click', function() {
-  watch.isOn ? stop() : start();
-});
-resetBtn.addEventListener('click', function() {
-  watch.reset();
-});
-*/
-
-
-
-
-
-// Create mowes count variables
+// Variables for stars, count correct and incorrect guesses
 const movesCount = document.querySelector('.moves');
 var numberMoves = 0;
 var numberMistakes = 0;
 var numberCorrectMoves = 0;
 var numberStars = 3;
 var starWord = "Stars";
-var timerId = document.querySelector("#timer");
-function respondToTheClick(){
-    //var numberClasses = 0;
-   //var firstCard;
-    //var secondCard;
-    //var firstCardValue;
-    //var secondCardValue;
+
+
+// Main function
+function respondToTheClick()
+{
+    if (watch.isOn === false) {
+        watch.start();
+    }
     var stars = document.querySelector('.stars');
     checkOpenClasses();
     if(numberClasses === 0 ){
@@ -114,7 +93,7 @@ function respondToTheClick(){
             secondCard.classList.add('match');
             numberClasses = 0;
             numberCorrectMoves += 1;
-            if(numberCorrectMoves === 2)
+            if(numberCorrectMoves === 8)
             {
                 watch.stop();
                 //var gameTime = ;
@@ -186,23 +165,55 @@ function respondToTheClick(){
 
 }
 
+// Add main function to all cards
 for (let i = 0; i < cards.length; i++){
     cards[i].addEventListener('click', respondToTheClick);
 }
 
-// Check how many cards open
-function checkOpenClasses () {
-    //numberClasses;
-    for (i = 0; i < cards.length; i++) {
-        if (cards[i].classList.contains('open')) {
-            numberClasses += 1;
-        }
-    }
-    return numberClasses;
+
+/*// Create close card function
+function closeCard(thatCard) {
+    event.target.classList.remove('open', 'show');
+}*/
+
+// Add an eventlisteners to cards
+
+
+
+/*// Function millisToMinutesAndSeconds() from https://stackoverflow.com/questions/21294302/converting-milliseconds-to-minutes-and-seconds-with-javascript
+function millisToMinutesAndSeconds(millis)
+{
+    var minutes = Math.floor(millis / 60000);
+    var seconds = ((millis % 60000) / 1000).toFixed(0);
+    return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+}*/
+
+// Create timer function ????????????
+//var timer = document.getElementById('timer');
+
+//watch.start();
+
+/*
+var toggleBtn = document.getElementById('toggle');
+var resetBtn = document.getElementById('reset');
+function start() {
+  toggleBtn.textContent = 'Stop';
+  watch.start();
 }
+function stop() {
+  toggleBtn.textContent = 'Start';
+  watch.stop();
+}
+toggleBtn.addEventListener('click', function() {
+  watch.isOn ? stop() : start();
+});
+resetBtn.addEventListener('click', function() {
+  watch.reset();
+});
+*/
 
 
-// Create Timer function
+
 
 
 
@@ -228,7 +239,7 @@ function pad(val) {
 
 
 
-
+//const startingTime = performance.now();
 
 
 
