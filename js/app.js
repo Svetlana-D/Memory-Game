@@ -38,7 +38,7 @@ function checkOpenClasses () {
         if (cards[i].classList.contains('open')) {
             numberClasses += 1;
         }
-    }
+    };
     return numberClasses;
 }
 
@@ -65,8 +65,10 @@ var numberStars = 3;
 var starWord = "Stars";
 
 
-// Main function that: start timer with watch.start(), open cards with openCard(), check if there are the same then match them,
-// if it not match close card, count mistakes, remove stars, stop timer with watch.stop() and  call modal
+/*
+* Main function that: start timer with watch.start(), open cards with openCard(), check if there are the same then match them,
+* if it not match close card, count mistakes, remove stars, stop timer watch.stop() and  call modal
+*/
 // Swall from https://sweetalert.js.org/guides/
 function respondToTheClick()
 {
@@ -147,4 +149,4 @@ function respondToTheClick()
 // Add main function to all cards
 for (let i = 0; i < cards.length; i++){
     cards[i].addEventListener('click', respondToTheClick);
-}
+};
