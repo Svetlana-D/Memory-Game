@@ -4,8 +4,9 @@
 
 * [About](#about)
 * [Instructions](#instructions)
-* [Contributing](#contributing)
 * [Installation](#installation)
+* [Borrowed](#borrowed)
+* [Contributing](#contributing)
 
 ## About
 It's **Shnazzy**. A complete browser-based card matching game (also known as Concentration).
@@ -26,6 +27,8 @@ $ cd Memory-Game
 ```
 
 ## Borrowed code
+
+Parts of code been borrowed.
 
 * Shuffle function [from](http://stackoverflow.com/a/2450976/)
 * Stopwatch [from](https://gist.github.com/anonymous/fe5cdd7e9cd14fea796b27d19f8d1cb6/)
