@@ -1,4 +1,6 @@
-function Stopwatch(elem) {
+// Use https://gist.github.com/anonymous/fe5cdd7e9cd14fea796b27d19f8d1cb6 for create stopWatch
+function stopWatch(elem)
+{
   var time = 0;
   var offset;
   var interval;
