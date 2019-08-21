@@ -65,7 +65,8 @@ var numberStars = 3;
 var starWord = "Stars";
 
 
-// Main function
+// Main function that: start timer with watch.start(), open cards with openCard(), check if there are the same then match them,
+// if it not match close card, count mistakes, remove stars, stop timer with watch.stop() and  call modal
 // Swall from https://sweetalert.js.org/guides/
 function respondToTheClick()
 {
