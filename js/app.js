@@ -122,7 +122,7 @@ function respondToTheClick()
             secondCard.classList.remove('open', 'show');
             numberClasses = 0;
             numberMistakes += 1;
-            if(numberMistakes === 2) {
+            if(numberMistakes === 3) {
                 stars.children[2].children[0].style.color = '#ffffff';
                 numberStars -= 1;
             }
@@ -130,11 +130,6 @@ function respondToTheClick()
                 stars.children[1].children[0].style.color = '#ffffff';
                 numberStars -= 1;
                 starWord = "Star";
-            }
-            if(numberMistakes === 10) {
-                stars.children[0].children[0].style.color = '#ffffff';
-                numberStars -= 1;
-                starWord = "Stars";
             }
             return;
             }
