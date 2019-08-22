@@ -25,6 +25,7 @@ Clone the GitHub repository
 $ git clone https://github.com/Svetlana-D/Memory-Game.git
 $ cd Memory-Game
 ```
+Open [index.html](index.html) file in your brouser.
 
 ## Borrowed
 
