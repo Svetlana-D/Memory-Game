@@ -95,8 +95,7 @@ function respondToTheClick()
             secondCard.classList.add('match');
             numberClasses = 0;
             numberCorrectMoves += 1;
-            if(numberCorrectMoves === 8)
-            {
+            if(numberCorrectMoves === 8) {
                 watch.stop();
                 swal({
                   title: "Congratulations! You Won!",
@@ -117,7 +116,7 @@ function respondToTheClick()
             }
         }
         if(firstCardValue.classList.value != secondCardValue.classList.value) {
-            setTimeout(closeC, 1500);
+            setTimeout(closeC, 500);
             function closeC(){
             firstCard.classList.remove('open', 'show');
             secondCard.classList.remove('open', 'show');
