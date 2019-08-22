@@ -28,7 +28,7 @@ resetButton.addEventListener('click', function restart() {
 
 // Open card function
 function openCard() {
-    event.target.classList.add('open', 'show');
+    event.target.classList.add('open', 'show', 'disabled');
 }
 
 
@@ -118,8 +118,8 @@ function respondToTheClick()
         if(firstCardValue.classList.value != secondCardValue.classList.value) {
             setTimeout(closeC, 500);
             function closeC(){
-            firstCard.classList.remove('open', 'show');
-            secondCard.classList.remove('open', 'show');
+            firstCard.classList.remove('open', 'show', 'disabled');
+            secondCard.classList.remove('open', 'show', 'disabled');
             numberClasses = 0;
             numberMistakes += 1;
             if(numberMistakes === 3) {
