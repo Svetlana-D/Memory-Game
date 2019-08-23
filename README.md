@@ -31,9 +31,9 @@ Open [index.html](index.html) file in your brouser.
 
 Parts of code been borrowed.
 
-* Shuffle function [from](http://stackoverflow.com/a/2450976/)
-* Stopwatch [from](https://gist.github.com/anonymous/fe5cdd7e9cd14fea796b27d19f8d1cb6/)
-* Modal from [sweetalert](https://sweetalert.js.org/guides/)
+* Shuffle function [from](http://stackoverflow.com/a/2450976/).
+* Stopwatch [from](https://gist.github.com/anonymous/fe5cdd7e9cd14fea796b27d19f8d1cb6/).
+* Modal from [sweetalert](https://sweetalert.js.org/guides/).
 
 ## Contributing
 
