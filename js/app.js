@@ -27,7 +27,7 @@ resetButton.addEventListener('click', function restart() {
 
 
 // Open card function
-function openCard() {
+function openCard(card) {
     event.target.classList.add('open', 'show', 'disabled');
 }
 
@@ -44,8 +44,8 @@ function checkOpenClasses () {
 
 
 // Variables for timer
-var watch = new stopWatch(timer);
-var timerId = document.querySelector("#timer");
+const watch = new stopWatch(timer);
+const timerId = document.querySelector("#timer");
 
 
 // Variables for open, close, match cards
@@ -80,12 +80,13 @@ function respondToTheClick()
     if(numberClasses === 0 ){
         openCard();
         firstCard = event.target;
-        firstCardValue = event.target.querySelector('.fa');
+        firstCardValue = firstCard.querySelector('.fa');
+        //firstCardValue = event.target.querySelector('.fa');
     }
     if(numberClasses === 1 ){
         openCard();
         secondCard = event.target;
-        secondCardValue = event.target.querySelector('.fa');
+        secondCardValue = secondCard.querySelector('.fa');
         numberMoves += 1;
         movesCount.textContent = numberMoves;
         if(firstCardValue.classList.value === secondCardValue.classList.value) {
